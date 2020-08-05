@@ -6,8 +6,10 @@ using System.Windows.Forms;
 
 namespace COMP123_M2020_Lesson11
 {
-    static class Program
+    public static class Program
     {
+        public static List<Contact> contacts;
+       
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,6 +18,9 @@ namespace COMP123_M2020_Lesson11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            contacts = new List<Contact>(); // new empty list of contacts
+
             Application.Run(new DBViewForm());
         }
     }
