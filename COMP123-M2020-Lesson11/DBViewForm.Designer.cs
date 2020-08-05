@@ -44,6 +44,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.ContactListSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.NextButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ContactsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contactsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lesson11DBDataSet)).BeginInit();
@@ -164,11 +165,22 @@
             this.ContactListSaveFileDialog.FileName = "ContactList";
             this.ContactListSaveFileDialog.Filter = "text files|*.txt|All Files|*.*";
             // 
+            // NextButton
+            // 
+            this.NextButton.Location = new System.Drawing.Point(603, 507);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(156, 42);
+            this.NextButton.TabIndex = 2;
+            this.NextButton.Text = "Next";
+            this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
             // DBViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.NextButton);
             this.Controls.Add(this.ContactsDataGridView);
             this.Controls.Add(this.PrimaryMenuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -207,6 +219,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog ContactListSaveFileDialog;
+        private System.Windows.Forms.Button NextButton;
     }
 }
 

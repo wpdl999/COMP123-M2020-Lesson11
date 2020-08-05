@@ -74,5 +74,11 @@ namespace COMP123_M2020_Lesson11
         {
             Application.Exit();
         }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            Program.contactinfoForm.Show();
+            this.Hide();
+        }
     }
 }
