@@ -8,12 +8,11 @@ namespace COMP123_M2020_Lesson11
 {
     public static class Program
     {
-        public static List<Contact> contacts;
-
         public static DBViewForm dbViewForm;
+        public static ContactInfoForm contactInfoForm;
+        public static AboutBoxForm aboutBoxForm;
+        public static Contact selectedContact;
 
-        public static ContactinfoForm contactinfoForm;
-       
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,9 +22,11 @@ namespace COMP123_M2020_Lesson11
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            contacts = new List<Contact>(); // new empty list of contacts
+            selectedContact = new Contact();
+
             dbViewForm = new DBViewForm();
-            contactinfoForm = new ContactinfoForm();
+            contactInfoForm = new ContactInfoForm();
+            aboutBoxForm = new AboutBoxForm();
 
             Application.Run(dbViewForm);
         }

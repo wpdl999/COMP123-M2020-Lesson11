@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("COMP123-M2020-Lesson11")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("COMP123-M2020-Lesson12")]
+[assembly: AssemblyDescription("Demo Project for Lesson 12")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("COMP123-M2020-Lesson11")]
+[assembly: AssemblyProduct("COMP123-M2020-Lesson12")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4d2d5dd2-1262-4d91-a544-b3745d609894")]
+[assembly: Guid("ad34a65c-9e84-4005-b217-cac4ca595680")]
 
 // Version information for an assembly consists of the following four values:
 //

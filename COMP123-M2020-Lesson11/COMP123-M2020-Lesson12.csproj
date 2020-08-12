@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D2D5DD2-1262-4D91-A544-B3745D609894}</ProjectGuid>
+    <ProjectGuid>{AD34A65C-9E84-4005-B217-CAC4CA595680}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>COMP123_M2020_Lesson11</RootNamespace>
     <AssemblyName>COMP123-M2020-Lesson11</AssemblyName>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,28 +58,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contact.cs" />
-    <Compile Include="ContactinfoForm.cs">
+    <Compile Include="AboutBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ContactinfoForm.Designer.cs">
-      <DependentUpon>ContactinfoForm.cs</DependentUpon>
+    <Compile Include="AboutBoxForm.Designer.cs">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contact.cs" />
+    <Compile Include="ContactInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactInfoForm.Designer.cs">
+      <DependentUpon>ContactInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactModel.cs" />
     <Compile Include="DBViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBViewForm.Designer.cs">
       <DependentUpon>DBViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lesson11DBDataSet.Designer.cs">
+    <Compile Include="Lesson12DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Lesson11DBDataSet.xsd</DependentUpon>
+      <DependentUpon>Lesson12DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ContactinfoForm.resx">
-      <DependentUpon>ContactinfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="AboutBoxForm.resx">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactInfoForm.resx">
+      <DependentUpon>ContactInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DBViewForm.resx">
       <DependentUpon>DBViewForm.cs</DependentUpon>
@@ -81,17 +103,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Lesson11DBDataSet.xsc">
-      <DependentUpon>Lesson11DBDataSet.xsd</DependentUpon>
+    <None Include="Lesson12DBDataSet.xsc">
+      <DependentUpon>Lesson12DBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Lesson11DBDataSet.xsd">
+    <None Include="Lesson12DBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Lesson11DBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>Lesson12DBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Lesson11DBDataSet.xss">
-      <DependentUpon>Lesson11DBDataSet.xsd</DependentUpon>
+    <None Include="Lesson12DBDataSet.xss">
+      <DependentUpon>Lesson12DBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -106,4 +129,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

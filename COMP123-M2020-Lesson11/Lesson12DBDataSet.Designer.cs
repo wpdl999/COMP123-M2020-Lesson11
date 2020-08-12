@@ -22,7 +22,7 @@ namespace COMP123_M2020_Lesson11 {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("Lesson11DBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Lesson11DBDataSet : global::System.Data.DataSet {
+    public partial class Lesson12DBDataSet : global::System.Data.DataSet {
         
         private ContactsDataTable tableContacts;
         
@@ -30,7 +30,7 @@ namespace COMP123_M2020_Lesson11 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public Lesson11DBDataSet() {
+        public Lesson12DBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace COMP123_M2020_Lesson11 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected Lesson11DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Lesson12DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace COMP123_M2020_Lesson11 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Lesson11DBDataSet cln = ((Lesson11DBDataSet)(base.Clone()));
+            Lesson12DBDataSet cln = ((Lesson12DBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -225,7 +225,7 @@ namespace COMP123_M2020_Lesson11 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Lesson11DBDataSet ds = new Lesson11DBDataSet();
+            Lesson12DBDataSet ds = new Lesson12DBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -539,7 +539,7 @@ namespace COMP123_M2020_Lesson11 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Lesson11DBDataSet ds = new Lesson11DBDataSet();
+                Lesson12DBDataSet ds = new Lesson12DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -893,7 +893,7 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Lesson11DBDataSet.ContactsDataTable dataTable) {
+        public virtual int Fill(Lesson12DBDataSet.ContactsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -906,9 +906,9 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Lesson11DBDataSet.ContactsDataTable GetData() {
+        public virtual Lesson12DBDataSet.ContactsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Lesson11DBDataSet.ContactsDataTable dataTable = new Lesson11DBDataSet.ContactsDataTable();
+            Lesson12DBDataSet.ContactsDataTable dataTable = new Lesson12DBDataSet.ContactsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -916,14 +916,14 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Lesson11DBDataSet.ContactsDataTable dataTable) {
+        public virtual int Update(Lesson12DBDataSet.ContactsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Lesson11DBDataSet dataSet) {
+        public virtual int Update(Lesson12DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Contacts");
         }
         
@@ -1204,7 +1204,7 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(Lesson11DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Lesson12DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._contactsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Contacts.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1223,7 +1223,7 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(Lesson11DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Lesson12DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._contactsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Contacts.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1241,7 +1241,7 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(Lesson11DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Lesson12DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._contactsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Contacts.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1283,7 +1283,7 @@ SELECT Id, FirstName, LastName, EmailAddress, ContactNumber FROM Contacts WHERE 
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(Lesson11DBDataSet dataSet) {
+        public virtual int UpdateAll(Lesson12DBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
